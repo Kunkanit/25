@@ -15,32 +15,51 @@ struct Area {
 };
 int main() {
 	int i = 0, n = 2;
-	int k;
+	int k,j;
+	int c = true;
 	struct Area area[5];
 
 
 	printf("----Area of Rectangle---- \n");
-
 	do {
-		printf("How many area do you want to find (1-5) = ");
-		scanf("%d", &k);
-	} while (k <= 0 || k>5);
+		printf("Do you want to use this \npress '1'= yes\npress '0'= No\n::  ");
+		scanf("%d", &j);
 
-	n = k;
+		if (j == 1) {
 
-	printf("Adding \n");
-	for (i = 0; i < n; i++) {
+			c = true;
 
-		area[i] = getArea();
+			do {
+				printf("How many area do you want to find (1-5) = ");
+				scanf("%d", &k);
+			} while (k <= 0 || k > 5);
 
-	}
-	printf("\nList of area\n");
-	for (i = 0; i < n; i++) {
-		print(area[i]);
+			n = k;
 
-	}
-	printf("----successful----\n");
+			printf("Adding \n");
+			for (i = 0; i < n; i++) {
 
+				area[i] = getArea();
+
+			}
+			printf("\nList of area\n");
+			for (i = 0; i < n; i++) {
+				print(area[i]);
+
+			}
+			printf("----successful----\n");
+
+		}else if (j == 0) {
+	            
+			c = false;
+			printf("See U....");
+		}
+		else {
+			 printf("You enter the wrong number");
+		
+		}
+	} while (false);
+	
 }
 
 struct Area getArea() {
